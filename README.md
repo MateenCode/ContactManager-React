@@ -1,5 +1,5 @@
 # ContactManager
-A contact manager tool that was created using React and Redux
+A contact manager tool that was created using React 
 
 https://mateencode.github.io/ContactManager-React/
 
