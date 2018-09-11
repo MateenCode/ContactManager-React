@@ -1,45 +1,47 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 
-export class Test extends Component {
-
+class Test extends Component {
   state = {
-    title:'',
-    body:''
+    title: '',
+    body: ''
   };
-
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/posts/1')
-    .then(response => response.json())
-    .then(data => this.setState({
-      title: data.title,
-      body: data.body
-    }))
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          title: data.title,
+          body: data.body
+        })
+      );
   }
 
-
-
-
   // componentWillMount() {
-  //   console.log('componentWillMount...')
+  //   console.log('componentWillMount...');
   // }
-  //
+
   // componentDidUpdate() {
-  //   console.log('componentUpdateMount...')
+  //   console.log('componentDidUpdate...');
   // }
-  //
-  // componentWillReceiveProps(nextProps, NextState) {
-  //   console.log('componentWillReceiveMount...')
+
+  // componentWillUpdate() {
+  //   console.log('componentWillUpdate...');
   // }
-  //
-  //
+
+  // componentWillReceiveProps(nextProps, nextState) {
+  //   console.log('componentWillReceiveProps...');
+  // }
+
   // static getDerivedStateFromProps(nextProps, prevState) {
-  //   return null;
+  //   return {
+  //     test: 'something'
+  //   };
   // }
 
-
-
-
+  // getSnapshotBeforeUpdate(prevProps, prevState) {
+  //   console.log(' getSnapshotBeforeUpdate...');
+  // }
 
   render() {
     const { title, body } = this.state;
@@ -51,6 +53,5 @@ export class Test extends Component {
     );
   }
 }
-
 
 export default Test;
